@@ -1,14 +1,12 @@
 body {
 background: url(../images/ON9SOO0.jpg) no-repeat center fixed;
 background-size: cover;
-margin:0;
-
+margin-left:0;
+margin-right: 0;
+margin-bottom: 30px;
 }
 
-.container{
-	padding-left: 0;
-	padding-right: 0;
-}
+
 
 .jumbotron {
 	background-color: rgba(238,238,238,0.5);
@@ -29,4 +27,8 @@ margin:0;
 
 .btn {
 	background-color: rgba(238,238,238,0.5);
+}
+
+.foodgif {
+	margin-bottom: 40px;
 }

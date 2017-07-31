@@ -19,7 +19,7 @@ function getGif(){
     	
     	for (var i = 0; i < results.length; i++) {
     		var foodDiv = $('<div>');
-    		foodDiv.addClass('col-md-6');
+    		foodDiv.addClass('col-md-6 foodgif');
     		var p = $('<p>').text('Rating: ' + results[i].rating);
     		var foodImage = $('<img>');
     		foodImage.addClass('img-rounded');

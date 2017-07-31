@@ -2,6 +2,7 @@ var favfoods = ["Fried Catfish", "Pickles", "Chana Masala", "Shrimp Poboy", "Pho
 renderButtons();
 getGif();
 
+
 function getGif(){
 	$('button').on('click', function(){
 		$('#food-display').empty();
@@ -21,26 +22,28 @@ function getGif(){
     		foodDiv.addClass('foodcontainer');
     		var p = $('<p>').text('Rating: ' + results[i].rating);
     		var foodImage = $('<img>');
-    		var animated = results[i].images.fixed_height.url;
+      	var animated = results[i].images.fixed_height.url;
     		var still = results[i].images.fixed_height_still.url;
 				foodImage.attr('src',still);
+				foodImage.attr('data-still', still);
+				foodImage.attr('data-animate', animated);
 				foodDiv.append(p);
 				foodDiv.append(foodImage);
 				$('#food-display').prepend(foodDiv);
 				
 				
-					$('img').click(function(){
-						if($(this).attr('src')==still){
-							$(this).attr('src',animated);
-						}
-						else if($(this).attr('src')==animated){
-							$(this).attr('src',still);
-						}
-					})
-				
-			}
+						$('img').click(function(){
+							if($(this).attr('src') == $(this).attr('data-still')){
+							$(this).attr('src',$(this).attr('data-animate'));
+							}
+							else if($(this).attr('src') == $(this).attr('data-animate')){
+							$(this).attr('src',$(this).attr('data-still'));
+							}
+						})
+			}	
 	  })
   })
+
 }
 
 function renderButtons(){
@@ -62,6 +65,7 @@ $('#add-food').on('click',function(event){
 	renderButtons();
 	getGif();
 })
+
 
 
 

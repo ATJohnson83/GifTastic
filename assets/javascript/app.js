@@ -1,4 +1,4 @@
-var favfoods = ["Fried Catfish", "Pickles", "Chana Masala", "Shrimp Poboy", "Pho"]
+var favfoods = ["Crawfish Boil", "Pickles", "Indian Food", "Po'boy Sandwich", "Pho"]
 renderButtons();
 getGif();
 
@@ -19,9 +19,10 @@ function getGif(){
     	
     	for (var i = 0; i < results.length; i++) {
     		var foodDiv = $('<div>');
-    		foodDiv.addClass('foodcontainer');
+    		foodDiv.addClass('col-md-6');
     		var p = $('<p>').text('Rating: ' + results[i].rating);
     		var foodImage = $('<img>');
+    		foodImage.addClass('img-rounded');
       	var animated = results[i].images.fixed_height.url;
     		var still = results[i].images.fixed_height_still.url;
 				foodImage.attr('src',still);
@@ -29,7 +30,7 @@ function getGif(){
 				foodImage.attr('data-animate', animated);
 				foodDiv.append(p);
 				foodDiv.append(foodImage);
-				$('#food-display').prepend(foodDiv);			
+				$('#food-display').append(foodDiv);			
 			}	
 					
 
@@ -53,7 +54,7 @@ function renderButtons(){
 
 	for (var i=0; i<favfoods.length; i++){
 		var btn = $('<button>');
-		btn.addClass('food');
+		btn.addClass('food btn btn-default');
 		btn.attr('data-name', favfoods[i]);
 		btn.text(favfoods[i]);
 		$('#foodBtn').append(btn);

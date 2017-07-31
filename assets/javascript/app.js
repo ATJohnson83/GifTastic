@@ -29,18 +29,20 @@ function getGif(){
 				foodImage.attr('data-animate', animated);
 				foodDiv.append(p);
 				foodDiv.append(foodImage);
-				$('#food-display').prepend(foodDiv);
-				
-				
-						$('img').click(function(){
-							if($(this).attr('src') == $(this).attr('data-still')){
-							$(this).attr('src',$(this).attr('data-animate'));
-							}
-							else if($(this).attr('src') == $(this).attr('data-animate')){
-							$(this).attr('src',$(this).attr('data-still'));
-							}
-						})
+				$('#food-display').prepend(foodDiv);			
 			}	
+					
+
+			$('img').click(function(){
+					if($(this).attr('src') == $(this).attr('data-still')){
+					$(this).attr('src',$(this).attr('data-animate'));
+					}
+					else if($(this).attr('src') == $(this).attr('data-animate')){
+					$(this).attr('src',$(this).attr('data-still'));
+					}
+			})
+
+
 	  })
   })
 
